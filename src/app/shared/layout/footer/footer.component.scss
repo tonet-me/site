@@ -1,0 +1,9 @@
+footer {
+  padding: 16px;
+  font-size: .75rem;
+
+  & span {
+    color: var(--text-secondary);
+    font-weight: lighter;
+  }
+}

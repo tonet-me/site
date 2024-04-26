@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/bootstrap.min.scss';
+@import "assets/styles/normalize.scss";
+@import "assets/styles/style.scss";
+@import "assets/styles/fonts.scss";
+@import 'ngx-toastr/toastr';
+@import "assets/styles/toast.scss";

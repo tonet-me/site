@@ -1,0 +1,36 @@
+@import "src/assets/styles/variable.scss";
+@import "src/assets/styles/mixins/card.scss";
+
+.custom-card {
+  width: calc(100% - 32px);
+  max-width: 768px;
+  @include custom_card();
+
+  & .image-container {
+    max-width: 550px;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: clamp(1rem, 0.9059rem + 0.4706vw, 1.4rem);
+    text-align: center;
+  }
+
+  .sec-title {
+    font-size: clamp(.8rem, 0.9059rem + 0.4706vw, 1.2rem);
+    color: $primary-light;
+    font-weight: 400;
+  }
+
+  .back-btn {
+    background: $primary;
+    border-radius: 2rem;
+    padding: 16px 32px;
+    color: #fff;
+    cursor: pointer;
+    font-size: clamp(.7rem, 0.9059rem + 0.4706vw, 1rem);
+  }
+}

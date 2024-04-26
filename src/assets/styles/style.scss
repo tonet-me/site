@@ -1,0 +1,9 @@
+body {
+  font-family: Poppins, sans-serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+*, body, div, span, ul, li, ol, p, h1, h2, h3, h4, h5, h6 {
+  box-sizing: border-box;
+}

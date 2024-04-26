@@ -1,0 +1,30 @@
+@import "src/assets/styles/variable.scss";
+
+.toast-container .ngx-toastr {
+  box-shadow: none !important;
+  border-radius: 10px !important;
+}
+
+.toast-message {
+  color: $white !important;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.toast {
+  &-error {
+    background-color: #a52834 !important;
+  }
+
+  &-sucess {
+    background-color: #0f5132 !important;
+  }
+
+  &-info {
+    background-color: deepskyblue !important;
+  }
+
+  &-warning {
+    background-color: orange !important;
+  }
+}

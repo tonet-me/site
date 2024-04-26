@@ -1,0 +1,103 @@
+@import "src/assets/styles/variable.scss";
+@import "src/assets/styles/mixins/card.scss";
+
+.home {
+  &__main-section {
+    & .title {
+      max-width: 550px;
+      font-weight: normal;
+      line-height: 1.8;
+      font-size: clamp(1.4rem, 0.6364rem + 1.8182vw, 2rem);
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+
+      & b {
+        color: $primary;
+      }
+    }
+
+    & .custom-btn {
+      color: $white;
+      background: $primary;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      min-width: 300px;
+    }
+
+
+    & .banner {
+      max-width: 700px;
+      min-width: 300px;
+    }
+  }
+
+  &__features-section {
+    & .card {
+      width: 100%;
+      @include custom_card();
+
+      & .icon-holder {
+        width: 80px;
+        height: 80px;
+        border-radius: 32px;
+        background: $primary;
+      }
+
+      & h2 {
+        font-size: clamp(1rem, 0.6364rem + 1.8182vw, 1.4rem);
+        font-weight: normal;
+        color: $primary;
+        margin: 16px 0;
+        text-align: center;
+      }
+
+      & p {
+        text-align: center;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+
+  &__report-section {
+    & h3 {
+      color: $primary;
+    }
+
+    & .banner {
+      max-width: 550px;
+      min-width: 300px;
+    }
+
+    & .title {
+      line-height: 3;
+      font-size: clamp(.9rem, 0.6364rem + 1.8182vw, 1.1rem);
+    }
+  }
+
+  &__contract-us-section {
+    & h3 {
+      color: $primary;
+    }
+
+    & .title {
+      line-height: 3;
+      font-size: clamp(.9rem, 0.6364rem + 1.8182vw, 1.1rem);
+
+      & a {
+        text-decoration: none;
+        color: $primary;
+        padding-bottom: 1px;
+        border-bottom: 1px dashed $primary;
+      }
+    }
+
+    & .banner {
+      max-width: 550px;
+      min-width: 300px;
+    }
+  }
+
+}

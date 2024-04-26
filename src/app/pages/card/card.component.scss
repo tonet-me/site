@@ -1,0 +1,94 @@
+@import "src/assets/styles/variable.scss";
+@import "src/assets/styles/mixins/card.scss";
+
+.custom-card {
+  width: calc(100% - 32px);
+  max-width: 768px;
+  @include custom_card();
+
+  .card-holder-img {
+    width: clamp(4.375rem, 2.9044rem + 7.3529vw, 7.5rem);
+    height: clamp(4.375rem, 2.9044rem + 7.3529vw, 7.5rem);
+    border-radius: 32px;
+    background: $primary;
+
+    .icon {
+      width: 45px;
+      height: 45px;
+    }
+
+    .cover {
+      width: inherit;
+      height: inherit;
+      border-radius: 32px;
+    }
+  }
+
+  .title {
+    font-size: clamp(1rem, 0.9059rem + 0.4706vw, 1.3rem);
+  }
+
+  .name {
+    font-size: clamp(0.9rem, 0.7059rem + 0.4706vw, 1.1rem);
+    color: $primary-light;
+  }
+
+  .qr-code {
+    width: clamp(4.375rem, 2.9044rem + 7.3529vw, 7.5rem);
+    height: clamp(4.375rem, 2.9044rem + 7.3529vw, 7.5rem);
+  }
+
+  section {
+    h3 {
+      margin: 16px 0;
+      font-size: clamp(1.2rem, 0.9059rem + 0.4706vw, 1.4rem);
+      font-weight: 500;
+    }
+
+    .item {
+      .item-title {
+        color: $primary-light;
+      }
+
+      .value {
+        color: $text;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .social-media {
+    img {
+      width: 50px;
+      height: 50px;
+      filter: grayscale(100%);
+      cursor: pointer;
+      transition: .5s;
+      margin-right: 12px;
+      margin-bottom: 12px;
+
+      &:hover {
+        filter: grayscale(0%);
+        transition: .5s;
+      }
+    }
+  }
+}
+
+
+qrcode::ng-deep .qrcode {
+
+  & canvas {
+    border-radius: 16px !important;
+  }
+}
+
+.share-btn {
+  cursor: pointer;
+  width: 100%;
+  height: 45px;
+  border-radius: 2rem;
+  background: $primary;
+  color: $white;
+  border: none;
+}

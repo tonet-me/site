@@ -1,0 +1,98 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <div class="custom-card p-3 p-sm-4 c-container" *ngIf="cardInfo$ | async as card">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex">
+        <div class="card-holder-img me-3 d-flex align-items-center justify-content-center">
+          @if (card.photo_url) {
+            <img class="cover" [src]="card.photo_url | getImageUrl" alt="card-cover"/>
+          } @else {
+            <img class="icon" src="assets/img/user.svg" alt="card-icon"/>
+          }
+        </div>
+        <div class="d-flex flex-column align-items-start justify-content-center">
+          <span class="my-1 title">{{ card.title }}</span>
+          <span class="my-1 name">{{ '@' + card.name }}</span>
+        </div>
+      </div>
+      <div class="d-flex" *ngIf="window">
+        <qrcode
+          [qrdata]="window.location.href"
+          [width]="100"
+          [colorDark]="'#333'"
+          [colorLight]="'#ffffff'"
+          errorCorrectionLevel="H"
+          cssClass="qrcode"/>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap my-4" *ngIf="card.about">
+      {{ card.about }}
+    </div>
+    <section class="social-media" *ngIf="card.social_medias.length > 0">
+      <h3>Social Medias</h3>
+      <div class="d-flex flex-wrap p-2">
+        @for (item of card.social_medias; track item.type) {
+          <a [href]="item.value" target="_blank">
+            <img src="assets/img/social-media/{{item.type | socialMediaName}}.svg"
+                 alt="{{item.type | socialMediaName}}-icon"/></a>
+        }
+      </div>
+    </section>
+    <section class="phone-number" *ngIf="card.phone_numbers.length > 0">
+      <h3>Phone Numbers</h3>
+      <div class="row">
+        @for (item of card.phone_numbers; let i = $index; track i) {
+          <div class="col-12 col-sm-6">
+            <div class="item p-3">
+              <div class="d-flex mb-2">
+                <img src="assets/img/call.svg" alt="{{ item.title }}-phone-number" class="me-2"/>
+                <a class="value"
+                   [href]="'tel:'+ item.value.prefix +  item.value.number">{{ item.value.prefix }}{{ item.value.number }}</a>
+              </div>
+              <span class="item-title">{{ item.title }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+    <section class="email" *ngIf="card.emails.length > 0">
+      <h3>Emails</h3>
+      <div class="row">
+        @for (item of card.emails; let i = $index; track i) {
+          <div class="col-12 col-sm-6">
+            <div class="item p-3">
+              <div class="d-flex mb-2">
+                <img src="assets/img/sms.svg" alt="{{ item.value }}-email" class="me-2"/>
+                <a class="value" [href]="'mailto:'+ item.value">
+                  {{ item.value }}
+                </a>
+              </div>
+              <span class="item-title">{{ item.title }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+    <section class="extra-link" *ngIf="card.links.length > 0">
+      <h3>Extra Links</h3>
+      <div class="row">
+        @for (item of card.links; let i = $index; track i) {
+          <div class="col-12 col-sm-6">
+            <div class="item p-3">
+              <div class="d-flex mb-2">
+                <img src="assets/img/link.svg" class="me-2" alt="{{ item.title }}-link"/>
+                <a class="value" [href]="item.value"
+                   target="_blank">{{ item.value }}</a>
+              </div>
+              <span class="item-title">{{ item.title }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+    <button class="share-btn d-flex align-items-center justify-content-center mt-3" (click)="onShareLink(card.title)">
+      <img src="assets/img/share.svg" alt="share-card" class="me-2"/>
+      share
+    </button>
+  </div>
+</div>
+
