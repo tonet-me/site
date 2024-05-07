@@ -35,6 +35,7 @@ export class CardComponent implements OnInit {
   onShareLink(title: string) {
       navigator.share({
         title,
+        text: 'Tonet - Craft Your Unique Digital Card and Share It with the World',
         url: window.location.href
       })
   }
