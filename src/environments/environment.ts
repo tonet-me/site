@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:1313/v1/',
+  apiUrl: 'https://api.tonet.me/v1/',
   siteUrl: 'https://tonet.me/',
   panelUrl: 'http://localhost:4200/',
 };
