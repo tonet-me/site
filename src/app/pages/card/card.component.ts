@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {map, Observable} from "rxjs";
 import {CardModel} from "@shared/models/card.model";
-import {AsyncPipe, NgIf} from "@angular/common";
+import {AsyncPipe, NgIf, NgOptimizedImage} from "@angular/common";
 import {GetImageUrlPipe} from "@shared/pipes/get-image-url.pipe";
 import {QRCodeModule} from "angularx-qrcode";
 import {SocialMediaNamePipe} from "@shared/pipes/social-media-name.pipe";
@@ -15,7 +15,8 @@ import {SocialMediaNamePipe} from "@shared/pipes/social-media-name.pipe";
     AsyncPipe,
     GetImageUrlPipe,
     QRCodeModule,
-    SocialMediaNamePipe
+    SocialMediaNamePipe,
+    NgOptimizedImage
   ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'

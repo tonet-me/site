@@ -12,11 +12,6 @@
     border-radius: 32px;
     background: $primary;
 
-    .icon {
-      width: 45px;
-      height: 45px;
-    }
-
     .cover {
       width: inherit;
       height: inherit;
@@ -54,15 +49,14 @@
       .value {
         color: $text;
         text-decoration: none;
-        font-size: clamp(0.875rem, 0.775rem + 0.4vw, 1rem);
+        font-size: clamp(0.875rem, 0.775rem + 0.4vw, 1.05rem);
+        margin-top: 3px;
       }
     }
   }
 
   .social-media {
     img {
-      width: 45px;
-      height: 45px;
       filter: grayscale(100%);
       cursor: pointer;
       transition: 0.5s;
@@ -88,7 +82,7 @@ qrcode::ng-deep .qrcode {
 .share-btn {
   cursor: pointer;
   width: 180px;
-  height: 40px;
+  height: 45px;
   border-radius: 2rem;
   background: $primary;
   color: $white;
