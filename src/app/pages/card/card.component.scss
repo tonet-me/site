@@ -12,10 +12,15 @@
     border-radius: 32px;
     background: $primary;
 
-    .cover {
+    & .cover {
       width: inherit;
       height: inherit;
       border-radius: 32px;
+    }
+
+    & .icon {
+      width: 48px;
+      height: 48px;
     }
   }
 
