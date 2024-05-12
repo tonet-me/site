@@ -12,11 +12,6 @@
     border-radius: 32px;
     background: $primary;
 
-    .icon {
-      width: 45px;
-      height: 45px;
-    }
-
     .cover {
       width: inherit;
       height: inherit;
@@ -41,31 +36,32 @@
   section {
     h3 {
       margin: 16px 0;
-      font-size: clamp(1.2rem, 0.9059rem + 0.4706vw, 1.4rem);
+      font-size: clamp(1rem, 0.94rem + 0.64vw, 1.2rem);
       font-weight: 500;
     }
 
     .item {
       .item-title {
         color: $primary-light;
+        font-size: clamp(0.7rem, 0.56rem + 0.56vw, 0.825rem);
       }
 
       .value {
         color: $text;
         text-decoration: none;
+        font-size: clamp(0.875rem, 0.775rem + 0.4vw, 1.05rem);
+        margin-top: 3px;
       }
     }
   }
 
   .social-media {
     img {
-      width: 50px;
-      height: 50px;
       filter: grayscale(100%);
       cursor: pointer;
-      transition: .5s;
-      margin-right: 12px;
-      margin-bottom: 12px;
+      transition: 0.5s;
+      margin-right: 16px;
+      margin-bottom: 16px;
 
       &:hover {
         filter: grayscale(0%);
@@ -85,7 +81,7 @@ qrcode::ng-deep .qrcode {
 
 .share-btn {
   cursor: pointer;
-  width: 100%;
+  width: 180px;
   height: 45px;
   border-radius: 2rem;
   background: $primary;
